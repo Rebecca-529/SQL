@@ -1,0 +1,22 @@
+CREATE TABLE Drug_Store (id INTEGER PRIMARY KEY, Product TEXT, Price REAL, Aisle INTEGER, Category TEXT);
+
+INSERT into Drug_Store VALUES (1, "Tampons", 4.99, 5, "Pharmacy");
+INSERT into Drug_Store VALUES (2, "Doritios", 3.49, 10, "Food");
+INSERT into Drug_Store Values (3, "Vaseline", .99, 2, "Pharmacy");
+INSERT into Drug_Store Values (4, "Chapstick", 1.99, 2, "Pharmacy");
+INSERT into Drug_Store Values (5, "Gloves", 10.99, 3, "Seasonal");
+INSERT into Drug_Store Values (6, "Valentines", 2.69, 3, "Seasonal");
+INSERT into Drug_Store Values (7, "Pepsi", 2.25, 11, "Food");
+INSERT into Drug_Store Values (8, "Aspirin", 6.00, 4, "Pharmacy");
+INSERT into Drug_Store Values (9, "BandAids", 3.19, 4, "Pharmacy");
+INSERT into Drug_Store Values (10, "Neosporin", 5.79, 4, "Pharmacy");
+INSERT into Drug_Store Values (11, "Water", .99, 11, "Food");
+INSERT into Drug_Store Values (12, "Reese's Hearts", 3.89, 3, "Seasonal");
+INSERT into Drug_Store Values (13, "Batteries", 7.99, 1, "Office");
+INSERT into Drug_Store Values (14, "Tape", 1.19, 1, "Office");
+INSERT into Drug_Store Values (15, "Paper", 5.50, 1, "Office");
+
+Select * from Drug_Store Order by Category;
+
+Select Sum(Price) from Drug_Store;
+Select * from Drug_Store Where price > 5;
