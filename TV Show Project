@@ -1,0 +1,48 @@
+/* Project to show joining different tables, used the TV Show Vampire Diaries */
+
+CREATE TABLE Vampire_Diaries (id INTEGER PRIMARY KEY AUTOINCREMENT, Name text, creature text);
+
+Insert into Vampire_Diaries (name, creature) VALUES ("Elena", "Human");
+Insert into Vampire_Diaries (name, creature) VALUES ("Caroline", "Vampire");
+Insert into Vampire_Diaries (name, creature) VALUES ("Bonnie", "Witch");
+Insert into Vampire_Diaries (name, creature) VALUES ("Damon", "Vampire");
+Insert into Vampire_Diaries (name, creature) VALUES ("Stefan", "Vampire");
+Insert into Vampire_Diaries (name, creature) VALUES ("Matt", "Human");
+Insert into Vampire_Diaries (name, creature) VALUES ("Tyler", "Werewolf");
+
+Select * from Vampire_Diaries;
+
+CREATE TABLE Dated (id INTEGER PRIMARY KEY AUTOINCREMENT, FLING_1 INTEGER, Fling_2 Integer, Fling_3 integer);
+
+INSERT into Dated (fling_1, fling_2, fling_3) Values (4, 5, 6);
+INSERT into Dated (fling_1, fling_2, fling_3) Values (6, 7, 5);
+INSERT into Dated (fling_1) values (6);
+
+CREATE TABLE Hobbies (id INTEGER PRIMARY KEY AUTOINCREMENT, hobby text);
+
+INSERT into Hobbies (hobby) values ("writing");
+INSERT into Hobbies (hobby) values ("planning");
+INSERT into Hobbies (hobby) values ("witchcraft");
+INSERT into Hobbies (hobby) values ("drinking");
+INSERT into Hobbies (hobby) values ("writing");
+INSERT into Hobbies (hobby) values ("working");
+INSERT into Hobbies (hobby) values ("football");
+
+Select Vampire_Diaries.name, hobbies.hobby
+From Vampire_diaries
+Join hobbies
+On vampire_diaries.id = hobbies.id
+Order by hobbies.hobby;
+
+
+
+Select v1.name as Female_Main_Character, v2.name as Male_1, v3.name as Male_2,v4.name as Male_3
+From dated
+left Join vampire_diaries v1 
+on v1.id = dated.id
+left Join vampire_diaries v2
+ON v2.id = fling_1
+left Join vampire_diaries v3
+ON v3.id = fling_2
+left Join vampire_diaries v4 
+on v4.id = fling_3;
